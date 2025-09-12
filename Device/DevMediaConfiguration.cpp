@@ -176,13 +176,13 @@ std::shared_ptr<MediaConfiguration> MediaConfiguration::create()
 
 DevMediaConfiguration::DevMediaConfiguration()
 {
-    // 先创建所有Configuration
-    // 遍历所有通道创建SourceConfiguration
+    /* 先创建所有Configuration */
+    /* 遍历所有通道创建SourceConfiguration */
     for (int ch = 0; ch < 1; ch++)
     {
         m_videoSources.push_back(std::make_shared<DevVideoSourceConfiguration>(ch));
         m_audioSources.push_back(std::make_shared<DevAudioSourceConfiguration>(ch));
-        // 遍历通道所有stream创建EncoderConfiguration
+        /* 遍历每个通道所有stream创建EncoderConfiguration */
         for (int stream = 0; stream < 2; stream++)
         {
             m_videoEncoders.push_back(std::make_shared<DevVideoEncoderConfiguration>(ch, stream));
@@ -192,10 +192,10 @@ DevMediaConfiguration::DevMediaConfiguration()
         m_ptz.push_back(std::make_shared<DevPTZConfiguration>(ch));
         m_metadata.push_back(std::make_shared<DevMetadataConfiguration>(ch));
     }
-    // 音频输出和音频解码
+    /* 音频输出和音频解码Configuration */
     m_audioOutputs.push_back(std::make_shared<DevAudioOutputConfiguration>(0));
     m_audioDecoders.push_back(std::make_shared<DevAudioDecoderConfiguration>(0));
-    // 根据Configuration创建Profile
+    /* 根据Configuration创建Profile */
     for (auto& ve : m_videoEncoders)
     {
         int ch = ve->getChannel();
@@ -211,6 +211,7 @@ DevMediaConfiguration::DevMediaConfiguration()
         m_profiles.back()->getAudioOutput() = m_audioOutputs[0];
         m_profiles.back()->getAudioDecoder() = m_audioDecoders[0];
 
+        /* 被Profile引用的Configuration，增加计数 */
         m_videoSources[ch]->addCount();
         ve->addCount();
         m_audioSources[ch]->addCount();

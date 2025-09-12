@@ -39,9 +39,9 @@ public:
     {
         return version.size() < 5 ? 0 : std::stoi(version.substr(3, 2));
     }
-    virtual bool* make_bool(soap *soap, bool value) const;
-    virtual int* make_int(soap *soap, int value) const;
-    virtual std::string* make_string(soap *soap, const std::string& value) const;
+    virtual bool* makeBool(soap *soap, bool value) const;
+    virtual int* makeInt(soap *soap, int value) const;
+    virtual std::string* makeString(soap *soap, const std::string& value) const;
 };
 
 #endif

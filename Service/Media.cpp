@@ -123,7 +123,7 @@ int Media::GetProfiles(_trt__GetProfiles *trt__GetProfiles, _trt__GetProfilesRes
         }
         item->Name = profile->getName();
         item->token = profile->getToken();
-        item->fixed = make_bool(trt__GetProfilesResponse.soap, profile->isFixed());
+        item->fixed = makeBool(trt__GetProfilesResponse.soap, profile->isFixed());
         item->VideoSourceConfiguration = profile->getVideoSource()->getConfiguration(trt__GetProfilesResponse.soap);
         item->AudioSourceConfiguration = profile->getAudioSource()->getConfiguration(trt__GetProfilesResponse.soap);
         item->VideoEncoderConfiguration = profile->getVideoEncoder()->getConfiguration(trt__GetProfilesResponse.soap);

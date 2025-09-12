@@ -130,7 +130,7 @@ int Media2::GetProfiles(_tr2__GetProfiles *tr2__GetProfiles, _tr2__GetProfilesRe
 
         item->Name = profile->getName();
         item->token = profile->getToken();
-        item->fixed = make_bool(tr2__GetProfilesResponse.soap, profile->isFixed());
+        item->fixed = makeBool(tr2__GetProfilesResponse.soap, profile->isFixed());
         item->Configurations->VideoSource = profile->getVideoSource()->getConfiguration(tr2__GetProfilesResponse.soap);
         item->Configurations->AudioSource = profile->getAudioSource()->getConfiguration(tr2__GetProfilesResponse.soap);
         item->Configurations->VideoEncoder = profile->getVideoEncoder2()->getConfiguration(tr2__GetProfilesResponse.soap);

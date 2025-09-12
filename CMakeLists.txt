@@ -41,7 +41,7 @@ aux_source_directory(Service Src_Service)
 aux_source_directory(Device Src_Device)
 aux_source_directory(. Src_Onvif)
 
-#包含了C++文件，需要设置语言类型
+#包含了C++头文件，需要设置语言类型
 set_source_files_properties(${Src_wsdd} PROPERTIES LANGUAGE CXX)
 set_source_files_properties(${Src_httpda} PROPERTIES LANGUAGE CXX)
 set_source_files_properties(${Src_wsse} PROPERTIES LANGUAGE CXX)
@@ -53,13 +53,15 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} \
     -DWITH_DEFAULT_VIRTUAL \
     -DWITH_OPENSSL \
     -DWITH_DOM \
+    -DWITH_NO_C_LOCALE \
     -ffunction-sections -fdata-sections"
 )
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} \
-    -std=c++11 \
     -DWITH_DEFAULT_VIRTUAL \
     -DWITH_OPENSSL \
     -DWITH_DOM \
+    -DWITH_NO_C_LOCALE \
+    -std=c++11 \
     -ffunction-sections -fdata-sections"
 )
 

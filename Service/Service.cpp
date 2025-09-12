@@ -161,7 +161,7 @@ const char* Service::getXAddr(soap *soap)
     return m_XAddr.c_str();
 }
 
-bool* Service::make_bool(soap *soap, bool value) const
+bool* Service::makeBool(soap *soap, bool value) const
 {
     bool *b = soap_new_bool(soap);
     if (b)
@@ -171,7 +171,7 @@ bool* Service::make_bool(soap *soap, bool value) const
     return b;
 }
 
-int* Service::make_int(soap *soap, int value) const
+int* Service::makeInt(soap *soap, int value) const
 {
     int *i = soap_new_int(soap);
     if (i)
@@ -181,7 +181,7 @@ int* Service::make_int(soap *soap, int value) const
     return i;
 }
 
-std::string* Service::make_string(soap *soap, const std::string& value) const
+std::string* Service::makeString(soap *soap, const std::string& value) const
 {
     std::string *s = soap_new_std__string(soap);
     if (s)

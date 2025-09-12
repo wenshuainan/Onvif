@@ -11,4 +11,4 @@ add_executable(OnvifTest test.cpp)
 
 set_target_properties(OnvifTest PROPERTIES LINK_FLAGS "-Wl,--gc-sections -fsanitize=address")
 
-target_link_libraries(OnvifTest onvif crypto ssl)
+target_link_libraries(OnvifTest onvif ssl crypto)

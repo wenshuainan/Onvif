@@ -154,15 +154,15 @@ int Device::GetServiceCapabilities(_tds__GetServiceCapabilities *tds__GetService
     capabilities->Network = soap_new_tds__NetworkCapabilities(tds__GetServiceCapabilitiesResponse.soap);
     if (capabilities->Network)
     {
-        capabilities->Network->IPFilter = make_bool(tds__GetServiceCapabilitiesResponse.soap, caps->isIPFilter());
-        capabilities->Network->ZeroConfiguration = make_bool(tds__GetServiceCapabilitiesResponse.soap, caps->isZeroConfiguration());
-        capabilities->Network->IPVersion6 = make_bool(tds__GetServiceCapabilitiesResponse.soap, caps->isIPVersion6());
-        capabilities->Network->DynDNS = make_bool(tds__GetServiceCapabilitiesResponse.soap, caps->isDynDNS());
-        capabilities->Network->Dot11Configuration = make_bool(tds__GetServiceCapabilitiesResponse.soap, caps->isDot11Configuration());
-        capabilities->Network->Dot1XConfigurations = make_int(tds__GetServiceCapabilitiesResponse.soap, caps->getDot1XConfigurations());
-        capabilities->Network->HostnameFromDHCP = make_bool(tds__GetServiceCapabilitiesResponse.soap, caps->isHostnameFromDHCP());
-        capabilities->Network->NTP = make_int(tds__GetServiceCapabilitiesResponse.soap, caps->getNTP());
-        capabilities->Network->DHCPv6 = make_bool(tds__GetServiceCapabilitiesResponse.soap, caps->isDHCPv6());
+        capabilities->Network->IPFilter = makeBool(tds__GetServiceCapabilitiesResponse.soap, caps->isIPFilter());
+        capabilities->Network->ZeroConfiguration = makeBool(tds__GetServiceCapabilitiesResponse.soap, caps->isZeroConfiguration());
+        capabilities->Network->IPVersion6 = makeBool(tds__GetServiceCapabilitiesResponse.soap, caps->isIPVersion6());
+        capabilities->Network->DynDNS = makeBool(tds__GetServiceCapabilitiesResponse.soap, caps->isDynDNS());
+        capabilities->Network->Dot11Configuration = makeBool(tds__GetServiceCapabilitiesResponse.soap, caps->isDot11Configuration());
+        capabilities->Network->Dot1XConfigurations = makeInt(tds__GetServiceCapabilitiesResponse.soap, caps->getDot1XConfigurations());
+        capabilities->Network->HostnameFromDHCP = makeBool(tds__GetServiceCapabilitiesResponse.soap, caps->isHostnameFromDHCP());
+        capabilities->Network->NTP = makeInt(tds__GetServiceCapabilitiesResponse.soap, caps->getNTP());
+        capabilities->Network->DHCPv6 = makeBool(tds__GetServiceCapabilitiesResponse.soap, caps->isDHCPv6());
     }
     else
     {
@@ -172,28 +172,28 @@ int Device::GetServiceCapabilities(_tds__GetServiceCapabilities *tds__GetService
     capabilities->Security = soap_new_tds__SecurityCapabilities(tds__GetServiceCapabilitiesResponse.soap);
     if (capabilities->Security)
     {
-        capabilities->Security->TLS1_x002e0 = make_bool(tds__GetServiceCapabilitiesResponse.soap, caps->isTLS1_x002e0());
-        capabilities->Security->TLS1_x002e1 = make_bool(tds__GetServiceCapabilitiesResponse.soap, caps->isTLS1_x002e1());
-        capabilities->Security->TLS1_x002e2 = make_bool(tds__GetServiceCapabilitiesResponse.soap, caps->isTLS1_x002e2());
-        capabilities->Security->OnboardKeyGeneration = make_bool(tds__GetServiceCapabilitiesResponse.soap, caps->isOnboardKeyGeneration());
-        capabilities->Security->AccessPolicyConfig = make_bool(tds__GetServiceCapabilitiesResponse.soap, caps->isAccessPolicyConfig());
-        capabilities->Security->DefaultAccessPolicy = make_bool(tds__GetServiceCapabilitiesResponse.soap, caps->isDefaultAccessPolicy());
-        capabilities->Security->Dot1X = make_bool(tds__GetServiceCapabilitiesResponse.soap, caps->isDot1X());
-        capabilities->Security->RemoteUserHandling = make_bool(tds__GetServiceCapabilitiesResponse.soap, caps->isRemoteUserHandling());
-        capabilities->Security->X_x002e509Token = make_bool(tds__GetServiceCapabilitiesResponse.soap, caps->isX_x002e509Token());
-        capabilities->Security->SAMLToken = make_bool(tds__GetServiceCapabilitiesResponse.soap, caps->isSAMLToken());
-        capabilities->Security->KerberosToken = make_bool(tds__GetServiceCapabilitiesResponse.soap, caps->isKerberosToken());
-        capabilities->Security->UsernameToken = make_bool(tds__GetServiceCapabilitiesResponse.soap, caps->isUsernameToken());
-        capabilities->Security->HttpDigest = make_bool(tds__GetServiceCapabilitiesResponse.soap, caps->isHttpDigest());
-        capabilities->Security->RELToken = make_bool(tds__GetServiceCapabilitiesResponse.soap, caps->isRELToken());
-        capabilities->Security->JsonWebToken = make_bool(tds__GetServiceCapabilitiesResponse.soap, caps->isJsonWebToken());
-        capabilities->Security->SupportedEAPMethods = make_string(tds__GetServiceCapabilitiesResponse.soap, caps->getSupportedEAPMethods());
-        capabilities->Security->MaxUsers = make_int(tds__GetServiceCapabilitiesResponse.soap, caps->getMaxUsers());
-        capabilities->Security->MaxUserNameLength = make_int(tds__GetServiceCapabilitiesResponse.soap, caps->getMaxUserNameLength());
-        capabilities->Security->MaxPasswordLength = make_int(tds__GetServiceCapabilitiesResponse.soap, caps->getMaxPasswordLength());
-        capabilities->Security->SecurityPolicies = make_string(tds__GetServiceCapabilitiesResponse.soap, caps->getSecurityPolicies());
-        capabilities->Security->MaxPasswordHistory = make_int(tds__GetServiceCapabilitiesResponse.soap, caps->getMaxPasswordHistory());
-        capabilities->Security->HashingAlgorithms = make_string(tds__GetServiceCapabilitiesResponse.soap, caps->getHashingAlgorithms());
+        capabilities->Security->TLS1_x002e0 = makeBool(tds__GetServiceCapabilitiesResponse.soap, caps->isTLS1_x002e0());
+        capabilities->Security->TLS1_x002e1 = makeBool(tds__GetServiceCapabilitiesResponse.soap, caps->isTLS1_x002e1());
+        capabilities->Security->TLS1_x002e2 = makeBool(tds__GetServiceCapabilitiesResponse.soap, caps->isTLS1_x002e2());
+        capabilities->Security->OnboardKeyGeneration = makeBool(tds__GetServiceCapabilitiesResponse.soap, caps->isOnboardKeyGeneration());
+        capabilities->Security->AccessPolicyConfig = makeBool(tds__GetServiceCapabilitiesResponse.soap, caps->isAccessPolicyConfig());
+        capabilities->Security->DefaultAccessPolicy = makeBool(tds__GetServiceCapabilitiesResponse.soap, caps->isDefaultAccessPolicy());
+        capabilities->Security->Dot1X = makeBool(tds__GetServiceCapabilitiesResponse.soap, caps->isDot1X());
+        capabilities->Security->RemoteUserHandling = makeBool(tds__GetServiceCapabilitiesResponse.soap, caps->isRemoteUserHandling());
+        capabilities->Security->X_x002e509Token = makeBool(tds__GetServiceCapabilitiesResponse.soap, caps->isX_x002e509Token());
+        capabilities->Security->SAMLToken = makeBool(tds__GetServiceCapabilitiesResponse.soap, caps->isSAMLToken());
+        capabilities->Security->KerberosToken = makeBool(tds__GetServiceCapabilitiesResponse.soap, caps->isKerberosToken());
+        capabilities->Security->UsernameToken = makeBool(tds__GetServiceCapabilitiesResponse.soap, caps->isUsernameToken());
+        capabilities->Security->HttpDigest = makeBool(tds__GetServiceCapabilitiesResponse.soap, caps->isHttpDigest());
+        capabilities->Security->RELToken = makeBool(tds__GetServiceCapabilitiesResponse.soap, caps->isRELToken());
+        capabilities->Security->JsonWebToken = makeBool(tds__GetServiceCapabilitiesResponse.soap, caps->isJsonWebToken());
+        capabilities->Security->SupportedEAPMethods = makeString(tds__GetServiceCapabilitiesResponse.soap, caps->getSupportedEAPMethods());
+        capabilities->Security->MaxUsers = makeInt(tds__GetServiceCapabilitiesResponse.soap, caps->getMaxUsers());
+        capabilities->Security->MaxUserNameLength = makeInt(tds__GetServiceCapabilitiesResponse.soap, caps->getMaxUserNameLength());
+        capabilities->Security->MaxPasswordLength = makeInt(tds__GetServiceCapabilitiesResponse.soap, caps->getMaxPasswordLength());
+        capabilities->Security->SecurityPolicies = makeString(tds__GetServiceCapabilitiesResponse.soap, caps->getSecurityPolicies());
+        capabilities->Security->MaxPasswordHistory = makeInt(tds__GetServiceCapabilitiesResponse.soap, caps->getMaxPasswordHistory());
+        capabilities->Security->HashingAlgorithms = makeString(tds__GetServiceCapabilitiesResponse.soap, caps->getHashingAlgorithms());
     }
     else
     {
@@ -203,27 +203,27 @@ int Device::GetServiceCapabilities(_tds__GetServiceCapabilities *tds__GetService
     capabilities->System = soap_new_tds__SystemCapabilities(tds__GetServiceCapabilitiesResponse.soap);
     if (capabilities->System)
     {
-        capabilities->System->DiscoveryResolve = make_bool(tds__GetServiceCapabilitiesResponse.soap, false);
-        capabilities->System->DiscoveryBye = make_bool(tds__GetServiceCapabilitiesResponse.soap, false);
-        capabilities->System->RemoteDiscovery = make_bool(tds__GetServiceCapabilitiesResponse.soap, false);
-        capabilities->System->SystemBackup = make_bool(tds__GetServiceCapabilitiesResponse.soap, caps->isSystemBackup());
-        capabilities->System->SystemLogging = make_bool(tds__GetServiceCapabilitiesResponse.soap, caps->isSystemLogging());
-        capabilities->System->FirmwareUpgrade = make_bool(tds__GetServiceCapabilitiesResponse.soap, caps->isFirmwareUpgrade());
-        capabilities->System->HttpFirmwareUpgrade = make_bool(tds__GetServiceCapabilitiesResponse.soap, caps->isHttpFirmwareUpgrade());
-        capabilities->System->HttpSystemBackup = make_bool(tds__GetServiceCapabilitiesResponse.soap, caps->isHttpSystemBackup());
-        capabilities->System->HttpSystemLogging = make_bool(tds__GetServiceCapabilitiesResponse.soap, caps->isHttpSystemLogging());
-        capabilities->System->HttpSupportInformation = make_bool(tds__GetServiceCapabilitiesResponse.soap, caps->isHttpSupportInformation());
-        capabilities->System->StorageConfiguration = make_bool(tds__GetServiceCapabilitiesResponse.soap, caps->isStorageConfiguration());
-        capabilities->System->MaxStorageConfigurations = make_int(tds__GetServiceCapabilitiesResponse.soap, caps->getMaxStorageConfigurations());
-        capabilities->System->StorageConfigurationRenewal = make_bool(tds__GetServiceCapabilitiesResponse.soap, caps->isStorageConfigurationRenewal());
-        capabilities->System->GeoLocationEntries = make_int(tds__GetServiceCapabilitiesResponse.soap, caps->getGeoLocationEntries());
-        capabilities->System->AutoGeo = make_string(tds__GetServiceCapabilitiesResponse.soap, caps->getAutoGeo());
-        capabilities->System->StorageTypesSupported = make_string(tds__GetServiceCapabilitiesResponse.soap, caps->getStorageTypesSupported());
-        capabilities->System->DiscoveryNotSupported = make_bool(tds__GetServiceCapabilitiesResponse.soap, false);
-        capabilities->System->NetworkConfigNotSupported = make_bool(tds__GetServiceCapabilitiesResponse.soap, caps->isNetworkConfigNotSupported());
-        capabilities->System->UserConfigNotSupported = make_bool(tds__GetServiceCapabilitiesResponse.soap, caps->isUserConfigNotSupported());
-        capabilities->System->Addons = make_string(tds__GetServiceCapabilitiesResponse.soap, caps->getAddons());
-        capabilities->System->HardwareType = make_string(tds__GetServiceCapabilitiesResponse.soap, caps->getHardwareType());
+        capabilities->System->DiscoveryResolve = makeBool(tds__GetServiceCapabilitiesResponse.soap, false);
+        capabilities->System->DiscoveryBye = makeBool(tds__GetServiceCapabilitiesResponse.soap, false);
+        capabilities->System->RemoteDiscovery = makeBool(tds__GetServiceCapabilitiesResponse.soap, false);
+        capabilities->System->SystemBackup = makeBool(tds__GetServiceCapabilitiesResponse.soap, caps->isSystemBackup());
+        capabilities->System->SystemLogging = makeBool(tds__GetServiceCapabilitiesResponse.soap, caps->isSystemLogging());
+        capabilities->System->FirmwareUpgrade = makeBool(tds__GetServiceCapabilitiesResponse.soap, caps->isFirmwareUpgrade());
+        capabilities->System->HttpFirmwareUpgrade = makeBool(tds__GetServiceCapabilitiesResponse.soap, caps->isHttpFirmwareUpgrade());
+        capabilities->System->HttpSystemBackup = makeBool(tds__GetServiceCapabilitiesResponse.soap, caps->isHttpSystemBackup());
+        capabilities->System->HttpSystemLogging = makeBool(tds__GetServiceCapabilitiesResponse.soap, caps->isHttpSystemLogging());
+        capabilities->System->HttpSupportInformation = makeBool(tds__GetServiceCapabilitiesResponse.soap, caps->isHttpSupportInformation());
+        capabilities->System->StorageConfiguration = makeBool(tds__GetServiceCapabilitiesResponse.soap, caps->isStorageConfiguration());
+        capabilities->System->MaxStorageConfigurations = makeInt(tds__GetServiceCapabilitiesResponse.soap, caps->getMaxStorageConfigurations());
+        capabilities->System->StorageConfigurationRenewal = makeBool(tds__GetServiceCapabilitiesResponse.soap, caps->isStorageConfigurationRenewal());
+        capabilities->System->GeoLocationEntries = makeInt(tds__GetServiceCapabilitiesResponse.soap, caps->getGeoLocationEntries());
+        capabilities->System->AutoGeo = makeString(tds__GetServiceCapabilitiesResponse.soap, caps->getAutoGeo());
+        capabilities->System->StorageTypesSupported = makeString(tds__GetServiceCapabilitiesResponse.soap, caps->getStorageTypesSupported());
+        capabilities->System->DiscoveryNotSupported = makeBool(tds__GetServiceCapabilitiesResponse.soap, false);
+        capabilities->System->NetworkConfigNotSupported = makeBool(tds__GetServiceCapabilitiesResponse.soap, caps->isNetworkConfigNotSupported());
+        capabilities->System->UserConfigNotSupported = makeBool(tds__GetServiceCapabilitiesResponse.soap, caps->isUserConfigNotSupported());
+        capabilities->System->Addons = makeString(tds__GetServiceCapabilitiesResponse.soap, caps->getAddons());
+        capabilities->System->HardwareType = makeString(tds__GetServiceCapabilitiesResponse.soap, caps->getHardwareType());
     }
     else
     {
@@ -278,10 +278,10 @@ int Device::GetCapabilities(_tds__GetCapabilities *tds__GetCapabilities, _tds__G
                 capabilities->Device->Network = soap_new_tt__NetworkCapabilities(tds__GetCapabilitiesResponse.soap);
                 if (capabilities->Device->Network)
                 {
-                    capabilities->Device->Network->IPFilter = make_bool(tds__GetCapabilitiesResponse.soap, caps->isIPFilter());
-                    capabilities->Device->Network->ZeroConfiguration = make_bool(tds__GetCapabilitiesResponse.soap, caps->isZeroConfiguration());
-                    capabilities->Device->Network->IPVersion6 = make_bool(tds__GetCapabilitiesResponse.soap, caps->isIPVersion6());
-                    capabilities->Device->Network->DynDNS = make_bool(tds__GetCapabilitiesResponse.soap, caps->isDynDNS());
+                    capabilities->Device->Network->IPFilter = makeBool(tds__GetCapabilitiesResponse.soap, caps->isIPFilter());
+                    capabilities->Device->Network->ZeroConfiguration = makeBool(tds__GetCapabilitiesResponse.soap, caps->isZeroConfiguration());
+                    capabilities->Device->Network->IPVersion6 = makeBool(tds__GetCapabilitiesResponse.soap, caps->isIPVersion6());
+                    capabilities->Device->Network->DynDNS = makeBool(tds__GetCapabilitiesResponse.soap, caps->isDynDNS());
                 }
 
                 capabilities->Device->System = soap_new_tt__SystemCapabilities(tds__GetCapabilitiesResponse.soap);
@@ -309,8 +309,8 @@ int Device::GetCapabilities(_tds__GetCapabilities *tds__GetCapabilities, _tds__G
                 capabilities->Device->IO = soap_new_tt__IOCapabilities(tds__GetCapabilitiesResponse.soap);
                 if (capabilities->Device->IO)
                 {
-                    capabilities->Device->IO->InputConnectors = make_int(tds__GetCapabilitiesResponse.soap, caps->getInputConnectors());
-                    capabilities->Device->IO->RelayOutputs = make_int(tds__GetCapabilitiesResponse.soap, caps->getRelayOutputs());
+                    capabilities->Device->IO->InputConnectors = makeInt(tds__GetCapabilitiesResponse.soap, caps->getInputConnectors());
+                    capabilities->Device->IO->RelayOutputs = makeInt(tds__GetCapabilitiesResponse.soap, caps->getRelayOutputs());
                 }
 
                 capabilities->Device->Security = soap_new_tt__SecurityCapabilities(tds__GetCapabilitiesResponse.soap);
@@ -337,9 +337,9 @@ int Device::GetCapabilities(_tds__GetCapabilities *tds__GetCapabilities, _tds__G
                 capabilities->Media->StreamingCapabilities = soap_new_tt__RealTimeStreamingCapabilities(tds__GetCapabilitiesResponse.soap);
                 if (capabilities->Media->StreamingCapabilities)
                 {
-                    capabilities->Media->StreamingCapabilities->RTPMulticast = make_bool(tds__GetCapabilitiesResponse.soap, true);
-                    capabilities->Media->StreamingCapabilities->RTP_USCORETCP = make_bool(tds__GetCapabilitiesResponse.soap, true);
-                    capabilities->Media->StreamingCapabilities->RTP_USCORERTSP_USCORETCP = make_bool(tds__GetCapabilitiesResponse.soap, true);
+                    capabilities->Media->StreamingCapabilities->RTPMulticast = makeBool(tds__GetCapabilitiesResponse.soap, true);
+                    capabilities->Media->StreamingCapabilities->RTP_USCORETCP = makeBool(tds__GetCapabilitiesResponse.soap, true);
+                    capabilities->Media->StreamingCapabilities->RTP_USCORERTSP_USCORETCP = makeBool(tds__GetCapabilitiesResponse.soap, true);
                 }
                 else
                 {
