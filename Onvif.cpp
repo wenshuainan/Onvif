@@ -1,5 +1,5 @@
 #include "Onvif.h"
-#include "Device/WSDiscovery.h"
+#include "Server.h"
 
 Onvif::Onvif()
 {}
@@ -10,14 +10,12 @@ Onvif::~Onvif()
 int Onvif::start()
 {
     printf("Onvif start\n");
-    WSDiscovery discovery;
-    discovery.run(3702);
+    Server::create();
     return 0;
 }
 
 int Onvif::stop()
 {
+    Server::destroy();
     return 0;
 }
-
-#include "Service/DeviceBinding.nsmap"

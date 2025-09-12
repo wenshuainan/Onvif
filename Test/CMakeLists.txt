@@ -3,14 +3,12 @@ project(OnvifTest)
 
 include_directories(..)
 link_directories(../Build)
-link_directories(../gsoap/lib)
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g -D_REENTRANT -Wall -ffunction-sections -fdata-sections -fsanitize=address -fno-omit-frame-pointer")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -g -D_REENTRANT -Wall -ffunction-sections -fdata-sections -fsanitize=address -fno-omit-frame-pointer")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g -Wall -ffunction-sections -fdata-sections -fsanitize=address -fno-omit-frame-pointer")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -g -Wall -ffunction-sections -fdata-sections -fsanitize=address -fno-omit-frame-pointer")
 
 add_executable(OnvifTest test.cpp)
 
 set_target_properties(OnvifTest PROPERTIES LINK_FLAGS "-Wl,--gc-sections -fsanitize=address")
 
-target_link_libraries(OnvifTest onvif)
-#target_link_libraries(OnvifTest gsoap++)
+target_link_libraries(OnvifTest onvif crypto ssl)
